@@ -1,0 +1,29 @@
+name: 'QGL Web Runner CI Action'
+description: 'Create a run and track if it is succeful or not'
+inputs:
+  game-id:
+    description: 'ID of the game'
+    required: true
+    default: 'WEEK1'
+  teamId:
+    description: 'ID of the team'
+    required: true
+    default: undefined
+  jar-path:
+    description: 'Path to the player jar'
+    required: true
+    default: undefined
+  api-token:
+    description: 'API Token for authentication'
+    required: true
+    default: undefined
+  timeout:
+    description: 'Maximum run duration'
+    required: false
+    default: 60
+outputs:
+  time:
+    description: 'The time we greeted you'
+runs:
+  using: 'node12'
+  main: 'index.js'
