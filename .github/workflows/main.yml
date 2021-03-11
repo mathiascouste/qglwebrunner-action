@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Action testing
+    steps:
+    - name: QGLWebRunner action test
+      id: qglwebrunner
+      uses: mathiascouste/qglwebrunner-action@main
+      with:
+        game-id: "WEEK 2"
+        team-id: "team_jar"
+        jar-path: "target/team_jar.jar"
+        api-token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50SWQiOiI1ZTQ1ZDY1ZTVlY2VkZTIxNDkzZTgyZjAiLCJuYW1lIjoiR2l0aHViIEFjdGlvbiBUb2tlbiIsImV4cGlyYXRpb24iOiIxMi0wMy0yMDIxIiwic2VjcmV0IjoiNWI0YmRmMmZjNjU3ZjBkNzMwYzBjZWQ1MzBmMDU4MWY0NTA5YWQzZDExYmUzODYyZDRiNTMzYjA4NTg2NTkzYjFhNzE2ZjQxNzVlMTRlNzc3YmY3NDM3M2EyYjIxODZiZmEwZWExMTM4ZWUyYzlkNzdkMmY2MTUzY2E4ODIzNGUiLCJ0eXBlIjoicHJpdmF0ZXRva2VuIn0._eXqklJIf8CFyST50yNOwV96NekEi5MBF8J6W-qPIuk"

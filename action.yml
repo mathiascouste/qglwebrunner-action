@@ -5,7 +5,7 @@ inputs:
     description: 'ID of the game'
     required: true
     default: 'WEEK1'
-  teamId:
+  team-id:
     description: 'ID of the team'
     required: true
     default: undefined
