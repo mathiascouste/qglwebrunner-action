@@ -1,3 +1,4 @@
+
 # QGL Web Runner action
 
 This action can be used to trigger a Run on the Web runner.
@@ -25,7 +26,9 @@ For now, failing the run does not make to action to fail.
 
 ## Example usage
 
-uses: actions/hello-world-javascript-action@v1.1
-with:
-  who-to-greet: 'Mona the Octocat'
-
+    uses: mathiascouste/qglwebrunner-action@alpha
+    with:
+		game-id: "<GAME_ID>"
+		team-id: "<TEAM_ID>"
+		jar-path: "<PATH_TO_JARFILE>"
+		api-token: "<API_TOKEN>"
