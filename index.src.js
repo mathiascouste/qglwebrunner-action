@@ -14,6 +14,13 @@ const wait = function (milliseconds) {
 };
 
 function uploadFile(apiToken, jarPath) {
+  console.log('uploadFile: ' + __dirname + '/' + jarPath);
+  if (fs.existsSync(path)) {
+    console.log('File exists. Uploading...');
+  } else {
+    console.log('File does not exists. Aborting...');
+  }
+
   return new Promise((resolve, reject) => {
     request.post({
       url: 'https://qglwebrunner.io-labs.fr/api/files',
@@ -25,6 +32,10 @@ function uploadFile(apiToken, jarPath) {
         file: fs.createReadStream(__dirname + '/' + jarPath)
       },
     }, function(error, response, body) {
+      if (error) {
+        console.log('Error during upload: ', error);
+        reject({error});
+      }
       if (body) {
         resolve(JSON.parse(body));
       } else {
@@ -35,6 +46,7 @@ function uploadFile(apiToken, jarPath) {
 }
 
 function startRun(apiToken, gameId, teamId, file, timeout) {
+  console.log('Launching starting run command ...');
   return new Promise((resolve, reject) => {
     request.post({
         url: 'https://qglwebrunner.io-labs.fr/api/runs',
@@ -53,6 +65,10 @@ function startRun(apiToken, gameId, teamId, file, timeout) {
          timeout: timeout
        }
       }, function(error, response, body) {
+        if (error) {
+          console.log('Error during run start: ', error);
+          reject({error});
+        }
         if (body) {
           resolve(body);
         } else {
