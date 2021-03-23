@@ -22,7 +22,7 @@ const wait = function (milliseconds) {
 
 function uploadFile(apiToken, jarPath) {
   console.log('uploadFile: ' + __dirname + '/' + jarPath);
-  if (fs.existsSync(path)) {
+  if (fs.existsSync(__dirname + '/' + jarPath)) {
     console.log('File exists. Uploading...');
   } else {
     console.log('File does not exists. Aborting...');
