@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "ncc build index.src.js --license licenses.txt && mv dist/index.js .",
+    "build": "ncc build index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

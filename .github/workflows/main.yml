@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Action testing
     steps:
+    - name: Checkout project
+      uses: actions/checkout@v2
     - name: QGLWebRunner action test
       id: qglwebrunner
       uses: mathiascouste/qglwebrunner-action@main
