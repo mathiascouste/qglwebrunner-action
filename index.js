@@ -21,8 +21,9 @@ const wait = function (milliseconds) {
 };
 
 function uploadFile(apiToken, jarPath) {
-  console.log('uploadFile: ' + __dirname + '/' + jarPath);
-  if (fs.existsSync(__dirname + '/' + jarPath)) {
+  const fullPath = /*__dirname + '/' + */jarPath;
+  console.log('uploadFile: ' + fullPath);
+  if (fs.existsSync(fullPath)) {
     console.log('File exists. Uploading...');
   } else {
     console.log('File does not exists. Aborting...');
@@ -36,7 +37,7 @@ function uploadFile(apiToken, jarPath) {
         "Content-Type": "multipart/form-data"
       },
       formData: {
-        file: fs.createReadStream(__dirname + '/' + jarPath)
+        file: fs.createReadStream(fullPath)
       },
     }, function(error, response, body) {
       if (error) {
